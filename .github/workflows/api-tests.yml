@@ -18,10 +18,10 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 🟢 Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
 
@@ -29,7 +29,6 @@ jobs:
         run: npm install -g @usebruno/cli
 
       - name: 🔧 Definir URL por ambiente
-        id: set-env
         run: |
           if [ "${{ github.event.inputs.environment }}" = "dev" ]; then
             echo "BASE_URL=https://petstore.swagger.io/v2" >> $GITHUB_ENV
@@ -39,5 +38,5 @@ jobs:
 
       - name: 🧪 Rodar testes
         run: |
-          bru run ./tests \
-            --env-var baseUrl=$BASE_URL
+          cd tests
+          bru run . --env-var baseUrl=$BASE_URL
