@@ -1,9 +1,0 @@
-version: 1
-name: Petstore Tests
-
-items:
-  - name: Create User
-    file: CreateUser.yml
-
-  - name: Login Successful
-    file: LoginSuccessfull.yml
