@@ -40,6 +40,4 @@ jobs:
         run: |
           cd tests/smoke
           bru run user login \
-            --env-var baseurl=$BASE_URL \
-            --reporter-junit results.xml \
-            --bail
+            --env-var baseurl=$BASE_URL
