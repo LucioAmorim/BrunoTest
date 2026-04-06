@@ -39,4 +39,4 @@ jobs:
       - name: 🧪 Rodar testes
         run: |
           cd tests/smoke
-          bru run  -user login -env-var baseurl=$BASE_URL
+          bru run  user login -env-var baseurl=$BASE_URL
